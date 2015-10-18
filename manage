@@ -1,0 +1,6 @@
+#!/bin/sh
+PYEX=../env/bin/python
+if [ ! -x $PYEX ]; then
+	PYEX=../$PYEX
+fi
+$PYEX manage.py $@
