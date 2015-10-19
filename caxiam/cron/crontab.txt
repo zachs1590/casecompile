@@ -1,0 +1,17 @@
+# standard crontab entries for a given project; update the
+# project name and projects base path and drop it in as the
+# crontab for the project user
+#
+# NOTE: servers should be configured to use UTC. Make sure
+# you update the hours to reflect an appropriate off-hours
+# maintenance window.
+
+SHELL=/bin/bash
+APPNAME=some_project_name
+CAXIAM_APPS=/home/local
+
+*/5 * * * * ( cd $CAXIAM_APPS/$APPNAME/project && ./tool cron.fast   ) >> $CAXIAM_APPS/$APPNAME/logs/cron.fast.log
+2   * * * * ( cd $CAXIAM_APPS/$APPNAME/project && ./tool cron.hourly ) >> $CAXIAM_APPS/$APPNAME/logs/cron.hourly.log
+7   3 * * * ( cd $CAXIAM_APPS/$APPNAME/project && ./tool cron.daily  ) >> $CAXIAM_APPS/$APPNAME/logs/cron.daily.log
+12  4 * * 6 ( cd $CAXIAM_APPS/$APPNAME/project && ./tool cron.weekly ) >> $CAXIAM_APPS/$APPNAME/logs/cron.weekly.log
+

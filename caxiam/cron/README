@@ -1,0 +1,37 @@
+This folder contains a skeleton for setting up cron jobs, periodic
+tasks that run within a Python/Django environment with full access to
+the database and models, but without requiring a request context or
+tying up any particular request processing thread.
+
+Cron jobs are grouped into four buckets by default; weekly, daily,
+hourly, and fast (every five minutes). A fifth bucket, testing, can
+be used during testing to invoke one more more jobs. All jobs within
+a bucket are executed in alphabetical order, so if you need a specific
+order, use a name like import_01_foo, import_02_bar.
+
+Each job in the four time buckets is executed within its own try: block
+and, should an exception occur, a backtrace will be printed and the
+next job will begin.
+
+To install this for development, copy the entire cron/ folder to your
+project/appname/tools directory. You can then execute any particular
+bucket from your project/ folder like this:
+
+    ./tool cron.fast
+
+Or hourly, daily, weekly, testing if you want a different bucket. You
+can also enable genuine automatic job processing by installing the
+crontab file; copy the contents of crontab.txt to your clipboard, do
+this command:
+
+    EDITOR=/usr/bin/nano crontab -u caxiam -e
+    
+and paste in the contents from your clipboard, being sure to edit the
+APPNAME variable to match your app. Save the file and exit the editor,
+and jobs will begin executing on schedule. Log files, including any
+exception backtraces, will be written to your logs/ directory (outside
+of project/). Please note, however, that once you have enabled the
+jobs in the crontab, you will need to edit the crontab again if you
+want to STOP the jobs from running automatically; most of the time,
+we don't run jobs automatically during development, as it's easier to
+run them manually whenever we need them.

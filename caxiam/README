@@ -1,0 +1,29 @@
+################################
+      FEATURES BRANCHES
+################################
+
+feature/enahnced-validation
+
+	Extending AjaxForm and AjaxFormView to support two major new features:
+	1. partial validation (form validation up to and including a set field)
+	2. inter-field validation (validation rules requiring multiple fields)
+	Isolated into a feature branch to avoid breaking anything.
+
+	NOTE: #2 will have to wait. It is stubbed out but not working. However,
+	partial validation fully works and is pretty awesome and a very easy
+	drop-in to existing apps, so I am merging this feature branch back in
+	and I will do inter-field validation in a later feature branch.
+	--Damien
+
+feature/payload_abstraction:
+	Creator: Zach Stevenson
+	Date Created: 6/11/2014
+	Description: I am trying to make it so we can have multiple unique instances of payload links, so i am abstracting
+		out the functionality of the current concrete model so that it's easy to replicate through to other mediums.
+
+feature/pydump
+	Buildling out a |pydump Django template filter that will let us easily dump the contents of a variable.
+
+feature/s3files
+	Refactor s3files into a re-usable component.
+

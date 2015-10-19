@@ -1,0 +1,67 @@
+/* basics */
+.cx_dbg { font-size: 12px; line-height: 15px; font-family: "Tahoma"; }
+
+/* scalars */
+.cx_dbg_none	{ color: #666666;	background-color: #ffffff;	}
+.cx_dbg_bool 	{ color: #008000;	background-color: #ffffff;	}
+.cx_dbg_int 	{ color: #000080;	background-color: #ffffff;	}
+.cx_dbg_long 	{ color: #000080;	background-color: #f0f0ff;	}
+.cx_dbg_float 	{ color: #000080;	background-color: #e0e0ff;	}
+.cx_dbg_decimal	{ color: #000080;	background-color: #d0d0d0;	}
+.cx_dbg_complex	{ color: #000080;	background-color: #e0ffff;	}
+.cx_dbg_str 	{ color: #000000;	background-color: #ffffff;	}
+.cx_dbg_unicode	{ color: #800000;	background-color: #ffffff;	}
+
+/* special */
+.cx_dbg_empty	{ color: #666666;	background-color: #ffffff;	}
+.cx_dbg_other	{ color: #008080;	background-color: #ffff00;	}
+.cx_dbg_object	{ color: #000000;	background-color: #ffffff;	}
+.cx_dbg_title	{ color: #000000;	background-color: #ffffff;	}
+.cx_dbg_error	{ color: #000000;	background-color: #ffff00; font-weight: bold;	}
+
+/* keys and values */
+.cx_dbg_key, .cx_dbg_value {
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	border-color: inherit;
+	padding: 1px;
+	vertical-align: top;
+	text-align: left;
+}
+.cx_dbg_key.cx_dbg_disabled { color: #555555; }
+.cx_dbg_value { background-color: #ffffff; }
+
+/* sets */
+.cx_dbg_set		{ border-collapse: collapse; border: 2px solid #ff00ff;	}
+
+/* tuples */
+.cx_dbg_tuple	{ border-collapse: collapse; border: 2px solid #aa0000;	}
+.cx_dbg_tuple > tbody > tr > .cx_dbg_key					{ background-color: #ffcccc; }
+.cx_dbg_tuple > tbody > tr > .cx_dbg_key.cx_dbg_disabled	{ background-color: #ddcccc; }
+
+/* lists */
+.cx_dbg_list	{ border-collapse: collapse; border: 2px solid #00aa00;	}
+.cx_dbg_list > tbody > tr > .cx_dbg_key					{ background-color: #ccffcc; }
+.cx_dbg_list > tbody > tr > .cx_dbg_key.cx_dbg_disabled	{ background-color: #ccddcc; }
+
+/* dictionaries */
+.cx_dbg_dict	{ border-collapse: collapse; border: 2px solid #0000ff;	}
+.cx_dbg_dict > tbody > tr > .cx_dbg_key					{ background-color: #ccccff; }
+.cx_dbg_dict > tbody > tr > .cx_dbg_key.cx_dbg_disabled	{ background-color: #ccccdd; }
+
+/* objects */
+.cx_dbg_object	{ border-collapse: collapse; border: 2px solid #aa00aa;	}
+.cx_dbg_object > tbody > tr > .cx_dbg_key					{ background-color: #ffccff; }
+.cx_dbg_object > tbody > tr > .cx_dbg_key.cx_dbg_disabled	{ background-color: #ddccdd; }
+
+/* methods */
+.cx_dbg_method	{ border-collapse: collapse; border: 2px solid #00aaaa;	}
+.cx_dbg_method > tbody > tr > .cx_dbg_key					{ background-color: #ccffff; }
+.cx_dbg_method > tbody > tr > .cx_dbg_key.cx_dbg_disabled	{ background-color: #ccdddd; }
+
+/* wrappers */
+.cx_dbg_json {	border-collapse: collapse;	border: 2px solid #000000;	}
+.cx_dbg_json > tbody > tr > .cx_dbg_inside { padding: 1px; border: 1px solid #000000; }
+.cx_dbg_json > tbody > tr > .cx_dbg_key					{ background-color: #cccccc; }
+.cx_dbg_json > tbody > tr > .cx_dbg_key.cx_dbg_disabled	{ background-color: #dddddd; }
